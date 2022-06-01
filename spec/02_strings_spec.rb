@@ -4,7 +4,7 @@ require "rspec"
 
 RSpec.describe "Strings: " do
     
-    # replace ___ with the correct answer to make the tests pass
+    # replace ___ with the correct answer to make the tests 
     
     it "Strings are there to represent text" do 
         expect("I am a string").to eq("I am a ___")
