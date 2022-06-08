@@ -1,6 +1,6 @@
 require "rspec"
 
-# Let's talk about nothing for a while
+# Let's talk about nothing for a while.
 
 RSpec.describe "Nil: " do
 
