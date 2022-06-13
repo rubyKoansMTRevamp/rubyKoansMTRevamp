@@ -56,7 +56,7 @@ RSpec.describe "Methods" do
         a * b
     end
 
-    it "You can also use your methods without (), but it's best to keep them to make things easier to read?" do
+    it "You can also use your methods without (), but it's best to keep them to make things easier to read!" do
         expect(6).to eq(multiply 2, ___)
      end
  
