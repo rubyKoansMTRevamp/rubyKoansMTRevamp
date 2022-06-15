@@ -14,7 +14,7 @@ For more info, have a look @: https://www.geeksforgeeks.org/ruby-methods/
 RSpec.describe "Methods" do
 
     def give_me_coffee
-       " Coffee please."
+       "Coffee please."
     end
 
     it "gives task to ask for a coffee" do
@@ -22,12 +22,12 @@ RSpec.describe "Methods" do
     end
 
     it "request to have 1 cup of coffee using the give_me_coffee method" do
-        expect("Give me 1 cup of" + ___).to eq("Give me 1 cup of Coffee please.")
+        expect("Give me 1 cup of " + ___).to eq("Give me 1 cup of Coffee please.")
     end
     
     def greeting(name)
         return "Howdy, #{name}!"
-        # We call this string interpolation.
+        # We call this string interpolation
     end
 
     it "Greet yourself using your name as an argument!" do
@@ -37,6 +37,7 @@ RSpec.describe "Methods" do
 
     def addition(a, b)
         return a + b
+        # This is called an explicit return because a return statement is being used
     end
 
     it "Let's add up some numbers!" do
@@ -46,25 +47,57 @@ RSpec.describe "Methods" do
 
     def multiply(a, b)
         a * b
+        # This is called an implicit return because no return statement is being used
+        # In Ruby, the last line in a code block is implicitely evaluated and returned; you do not need to use an explicit return statement.
     end
 
     it "Single line functions are cool, but mind the comma!" do
-       expect(6).to eq(multiply(2, ___))
+        expect(6).to eq(multiply(2, ___))
     end
-
+ 
     def multiply a, b
         a * b
     end
-
+ 
     it "You can also use your methods without (), but it's best to keep them to make things easier to read!" do
         expect(6).to eq(multiply 2, ___)
-     end
- 
+    end
+
+    def method_with_explicit_return
+        "cat"
+        return "dog"
+        "rabbit"
+    end
+
+    it "Returns the value in the statement that begins with the word return" do
+        expect(method_with_explicit_return).to eq("___")
+    end
+
+    def method_without_explicit_return
+        "dog"
+        "cat"
+    end
+
+    it "Returns the last evaluated expression" do 
+        expect(method_without_explicit_return).to eq("____")
+    end
+
+    def purplify(animal)
+        "purple #{animal}" 
+    end
+
+    def purplify_and_miniaturize(animal)
+        purple_animal = purplify(animal)
+        "Miniature #{purple_animal}"
+    end
+
+    it "You can call a method from inside another method" do
+        expect(purplify_and_miniaturize(___)).to eq("___")
+    end
+
 =begin
-Calling a method inside another method
 An example of iterating (maybe!)
 Passing in an array
-Mention that the last statement in ruby is implicitly returned (unless you have an explicit return?)
 Show an example of a default value for an argument, show an example of wrong number of arguments
 =end
 
