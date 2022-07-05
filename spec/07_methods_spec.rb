@@ -13,12 +13,12 @@ For more info, have a look @: https://www.geeksforgeeks.org/ruby-methods/
 
 RSpec.describe "Methods" do
 
-    def give_me_coffee
-       "Coffee please."
+    def give_me_coffee()
+       return "Coffee please."
     end
 
     it "gives task to ask for a coffee" do
-        expect(give_me_coffee).to eq(___)
+        expect(give_me_coffee()).to eq(___)
     end
 
     it "request to have 1 cup of coffee using the give_me_coffee method" do
@@ -55,12 +55,15 @@ RSpec.describe "Methods" do
         expect(6).to eq(multiply(2, ___))
     end
  
-    def multiply a, b
-        a * b
-    end
- 
     it "You can also use your methods without (), but it's best to keep them to make things easier to read!" do
         expect(6).to eq(multiply 2, ___)
+    end
+
+    it "You can also declare your method without using round bracket" do
+        def addTwoStrings a,b
+            a + b
+        end
+        expect(addTwoStrings "hello", " world").to eq(___)
     end
 
     def method_with_explicit_return
@@ -76,6 +79,8 @@ RSpec.describe "Methods" do
     def method_without_explicit_return
         "dog"
         "cat"
+        "rabbit"
+        
     end
 
     it "Returns the last evaluated expression" do 
