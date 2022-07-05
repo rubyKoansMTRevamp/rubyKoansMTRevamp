@@ -55,9 +55,24 @@ RSpec.describe "Methods" do
         expect(6).to eq(multiply(2, ___))
     end
  
+   
     it "You can also use your methods without (), but it's best to keep them to make things easier to read!" do
-        expect(6).to eq(multiply 2, ___)
+        expect(6).to eq(multiply 2, ___)  # no brackets!
     end
+    
+    it "You can provide a default arguement for your parameters" do
+     # welcome to our store where most things are 99p
+        def set_price( item,price = 0.99)
+         return  "#{item} : #{price}" 
+    end
+    
+    #Some items are more expensive than others
+    expect(set_price("picnic basket", 5.99)).to eq(_)   
+    expect(set_price("toy robot")).to eq(_)
+
+    end 
+
+
 
     it "You can also declare your method without using round bracket" do
         def addTwoStrings a,b
@@ -99,10 +114,28 @@ RSpec.describe "Methods" do
     it "You can call a method from inside another method" do
         expect(purplify_and_miniaturize(___)).to eq("___")
     end
+    
+    it "You can create a method containing an iterator which accepts an array and works the elements of that array" do 
+        # More on iterators later
+        def display_word(array_of_letters)
+            word = ''
+    
+            array_of_letters.each do |letter|
+            word += letter
+            end
+         word
+        end
+
+        expect(display_word(['R', 'U', 'B', 'Y' ])).to eq(___)
+
+    
+    end
+   
 
 =begin
 An example of iterating (maybe!)
 Passing in an array
+accept default argument for parameter
 Show an example of a default value for an argument, show an example of wrong number of arguments
 =end
 
